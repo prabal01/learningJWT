@@ -1,3 +1,12 @@
+# Before starting following instructions:-
+
+1) Clone cities into task folder
+   `git clone https://github.com/rahulattainu/cities.git`
+
+2) Import cities.json into MongoDB
+    `mongoimport --jsonArray --db cities --collection cities --file ./cities/cities.json`
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
