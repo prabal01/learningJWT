@@ -1,9 +1,11 @@
 import './App.css';
+import LoginPage from './Components/login_page';
+import { DivCard } from './Components/login_page/login_component';
 
 function App() {
   return (
-    <div>
-      <h1>Hello World</h1>
+    <div className="App">
+      <LoginPage/>
     </div>
   );
 }
