@@ -1,9 +1,10 @@
 const mongoose = require("mongoose");
 
 const userSchema = new mongoose.Schema({
-  _id: {
-    type: mongoose.Types.ObjectId,
-  },
+  // _id: {
+  //   type: mongoose.Types.ObjectId,
+  //   required:false
+  // },
   fullName: {
     type: String,
     trim: true,
