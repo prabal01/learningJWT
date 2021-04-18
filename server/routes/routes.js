@@ -1,11 +1,17 @@
 const express = require("express");
 
-let {registration, login} = require("./controllers/controllers.js");
+let {
+  registration,
+  login,
+  stateAPI,
+  cityAPI,
+} = require("../controllers/controllers.js");
 
 let router = express.Router();
 
-
 router.post("/reg", registration);
-router.get("/login", login)
+router.post("/login", login);
+router.post("/stateAPI", stateAPI);
+router.post("/cityAPI", cityAPI);
 
 module.exports = router;
