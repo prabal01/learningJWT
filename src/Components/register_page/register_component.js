@@ -1,39 +1,60 @@
-import React from 'react'
+import React from "react";
+import { Link } from "react-router-dom";
 
 export function DivCard(props) {
-    return (
-        <div className="divCard">
-            <div className="formDiv">
-                <h1>SignUp Page</h1>
-                <div className="inputFields" onChange={(e)=>props.handler.nameHandler(e)}>
-                    <input type="text" placeholder="Fullname" />
-                    <div>
-                        <input type="email" placeholder="Email" onChange={(e)=>props.handler.emailHandler(e)}/>
-                        <input type="email" placeholder="Username" onChange={(e)=>props.handler.userNameHandler(e)} />
-                    </div>
-                    <div>
-                        <input type="password" placeholder="Password" onChange={(e)=>props.handler.paswordHandler(e)}/>
-                        <input type="password" placeholder="Type password again" onChange={(e)=>props.handler.retypedPasswordHandler(e)}/>
-                    </div>
-                    <div>
-                        <select id="State" onSelect={(e)=>props.handler.stateHandler(e)}>
-                            <option value="volvo">Aasam</option>
-                            <option value="saab">Karnataka</option>
-                            <option value="mercedes">Uttar Pradesh</option>
-                            <option value="audi">Gujrat</option>
-                            </select>
-                        <select id="City" onSelect={(e)=>props.handler.cityHandler(e)}>
-                            <option value="volvo">Bateilly</option>
-                            <option value="saab">Karnataka</option>
-                            <option value="mercedes">Uttar Pradesh</option>
-                            <option value="audi">Gujrat</option>
-                            </select>
-                    </div>
-                </div>
-                <button> SignUp </button>
-            </div>
+  let stateComponent = props.states.map((state, index) => (
+    <option key={index}>{state}</option>
+  ));
+
+  let cities = props.allCities.map((city,index)=>
+    <option key={index}>{city}</option>
+)
+const loginButton= (props.data.mes=="registration succesful" )? (<Link to="/">login now</Link>):"" 
+  return (
+    <div className="divCard">
+      <div className="formDiv">
+        <h1>SignUp Page</h1>
+        <p className="mes">{props.data.mes}</p>
+        {loginButton}
+        <div
+          className="inputFields"
+        >
+          <input type="text" placeholder="Fullname" onChange={(e) => props.handler.nameHandler(e)}/>
+          <div>
+            <input
+              type="email"
+              placeholder="Email"
+              onChange={(e) => props.handler.emailHandler(e)}
+            />
+            <input
+              type="email"
+              placeholder="Username"
+              onChange={(e) => props.handler.userNameHandler(e)}
+            />
+          </div>
+          <div>
+            <input
+              type="password"
+              placeholder="Password"
+              onChange={(e) => props.handler.paswordHandler(e)}
+            />
+            <input
+              type="password"
+              placeholder="Type password again"
+              onChange={(e) => props.handler.retypedPasswordHandler(e)}
+            />
+          </div>
+          <div>
+            <select id="State" onChange={(e) => props.handler.stateHandler(e)}>
+              {stateComponent}
+            </select>
+            <select id="City" onChange={(e) => props.handler.cityHandler(e)}>
+            {cities}
+            </select>
+          </div>
         </div>
-    )
+        <button onClick={()=>props.handler.submitButtonHandler()}> SignUp </button>
+      </div>
+    </div>
+  );
 }
-
-

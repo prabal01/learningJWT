@@ -1,65 +1,72 @@
-body{
-    background-color: rgb(228, 228, 228);
+body {
+  background-color: rgb(228, 228, 228);
 }
 
-.divCard{
-    background-color: white;
-    height: 90vh;
-    width: 90vw;
-    box-shadow: 0 0 20px gray;
-    border-radius: 10px;
-    padding: 20px;
-    align-items: center;
-    margin-top:20px ;
-    display: grid;
-    place-items: center;
+.divCard {
+  background-color: white;
+  height: 90vh;
+  width: 90vw;
+  box-shadow: 0 0 20px gray;
+  border-radius: 10px;
+  padding: 20px;
+  align-items: center;
+  margin-top: 20px;
+  display: grid;
+  place-items: center;
 }
-.formDiv{
-    display: flex;
-    padding: 50px;
-    flex-direction: column;
-    height: 70vh;
-    width: 50vh;
-    justify-content: space-evenly;
-
-}
-
-
-input{
-    height: 40px;
-    border: none;
-    font-size: 1rem;
-    margin-bottom: 50px;
+.formDiv {
+  display: flex;
+  padding: 50px;
+  flex-direction: column;
+  height: 70vh;
+  width: 50vh;
+  justify-content: space-evenly;
 }
 
-select option{
-    height: 40px;
-    border: none;
-    font-size: 1rem;
-    margin-bottom: 50px;
+input {
+  height: 40px;
+  border: none;
+  font-size: 1rem;
+  margin-bottom: 50px;
 }
 
-
-input:focus{
-    outline: none;
-    border: none;
-    
+select option {
+  height: 40px;
+  border: none;
+  font-size: 1rem;
+  margin-bottom: 50px;
 }
 
-button{
-    height: 50px;
-    background-color: green;
-    color: white;
-    font-size: 1.5rem;
-    border: none;
-    width: 90px;
+input:focus {
+  outline: none;
+  border: none;
 }
 
-
-select{
-    margin-right: 50px;
-    height:40px;
+button {
+  height: 50px;
+  background-color: green;
+  color: white;
+  font-size: 1.5rem;
+  border: none;
+  width: 90px;
 }
-select:focus{
-    outline: none;
+
+select {
+  margin-right: 50px;
+  height: 40px;
+}
+select:focus {
+  outline: none;
+}
+
+.mes {
+  color: red;
+  font-size: x-small;
+}
+
+#table{
+    min-width: 50%;
+}
+#table #jwt{
+    word-wrap: anywhere;
 }

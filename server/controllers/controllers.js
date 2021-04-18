@@ -12,6 +12,12 @@ exports.registration = (req, res) => {
   const email = req.param("email");
   const state = req.param("state");
   const city = req.param("city");
+  console.log(uname);
+  console.log(pword);
+  console.log(name);
+  console.log(email);
+  console.log(state);
+  console.log(city);
 
   if (!(uname && pword && name && email && state && city))
     res.json({ msg: "All fields are required" });
@@ -34,10 +40,10 @@ exports.registration = (req, res) => {
         (err, r) => {
           if (err) {
             console.log(err);
-            return res.json({ msg: "error" });
+            return res.json({ msg: false });
           } else {
             console.log(r);
-            return res.json({ msg: "success" });
+            return res.json({ msg: true });
           }
         }
       );
@@ -52,10 +58,14 @@ exports.login = (req, res) => {
   // var token = jwt.sign({foo:'bar'}, 'shhhh');
   User.find({ username: uname }, (err, user) => {
     if (err) {
-      return res.status(404).json({ msg: "Error: Something happened" });
+      return res.status(200).json({ msg: "Error: Something happened" });
     }
     let data = JSON.parse(JSON.stringify(user));
-    console.log(data[0].password);
+    try {
+      console.log(data[0].password);
+    } catch (e) {
+      return res.status(200).json({ msg: "User Doesn't Exits" });
+    }
     if (data[0].password != pword) {
       return res.status(200).send("Username or password incorrect");
     } else {

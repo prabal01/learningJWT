@@ -11,7 +11,7 @@ let router = express.Router();
 
 router.post("/reg", registration);
 router.post("/login", login);
-router.post("/stateAPI", stateAPI);
-router.post("/cityAPI", cityAPI);
+router.get("/stateAPI", stateAPI);
+router.get("/cityAPI", cityAPI);
 
 module.exports = router;
